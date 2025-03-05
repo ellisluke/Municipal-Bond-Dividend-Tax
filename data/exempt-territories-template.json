@@ -1,0 +1,5 @@
+{
+    "StateCode": "EX",
+    "StateName": "Example",
+    "ExemptTerritories": ["HI", "VT", "MO"]
+}

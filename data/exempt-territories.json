@@ -1,0 +1,282 @@
+[
+    {
+        "StateCode": "AK",
+        "StateName": "Alaska",
+        "ExemptTerritories": ["AK", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "AL",
+        "StateName": "Alabama",
+        "ExemptTerritories": ["AL", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "AR",
+        "StateName": "Arkansas",
+        "ExemptTerritories": ["AR", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "AZ",
+        "StateName": "Arizona",
+        "ExemptTerritories": ["AZ", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "CA",
+        "StateName": "California",
+        "ExemptTerritories": ["CA", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "CO",
+        "StateName": "Colorado",
+        "ExemptTerritories": ["CO", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "CT",
+        "StateName": "Connecticut",
+        "ExemptTerritories": ["CT", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "DC",
+        "StateName": "District of Columbia",
+        "ExemptTerritories": ["DC", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "DE",
+        "StateName": "Delaware",
+        "ExemptTerritories": ["DE", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "FL",
+        "StateName": "Florida",
+        "ExemptTerritories": ["FL", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "GA",
+        "StateName": "Georgia",
+        "ExemptTerritories": ["GA", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "HI",
+        "StateName": "Hawaii",
+        "ExemptTerritories": ["HI", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "IA",
+        "StateName": "Iowa",
+        "ExemptTerritories": []
+    },
+    {
+        "StateCode": "ID",
+        "StateName": "Idaho",
+        "ExemptTerritories": ["ID", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "IL",
+        "StateName": "Illinois",
+        "ExemptTerritories": []
+    },
+    {
+        "StateCode": "IN",
+        "StateName": "Indiana",
+        "ExemptTerritories": ["IN", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "KS",
+        "StateName": "Kansas",
+        "ExemptTerritories": ["KS", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "KY",
+        "StateName": "Kentucky",
+        "ExemptTerritories": ["KY", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "LA",
+        "StateName": "Louisiana",
+        "ExemptTerritories": ["LA", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "MA",
+        "StateName": "Massachusetts",
+        "ExemptTerritories": ["MA", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "MD",
+        "StateName": "Maryland",
+        "ExemptTerritories": ["MD", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "ME",
+        "StateName": "Maine",
+        "ExemptTerritories": ["ME", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "MI",
+        "StateName": "Michigan",
+        "ExemptTerritories": ["MI", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "MN",
+        "StateName": "Minnesota",
+        "ExemptTerritories": ["MN", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "MO",
+        "StateName": "Missouri",
+        "ExemptTerritories": ["MO", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "MS",
+        "StateName": "Mississippi",
+        "ExemptTerritories": ["MS", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "MT",
+        "StateName": "Montana",
+        "ExemptTerritories": ["MT", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "NC",
+        "StateName": "North Carolina",
+        "ExemptTerritories": ["NC", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "ND",
+        "StateName": "North Dakota",
+        "ExemptTerritories": ["ND", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "NE",
+        "StateName": "Nebraska",
+        "ExemptTerritories": ["NE", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "NH",
+        "StateName": "New Hampshire",
+        "ExemptTerritories": ["NH", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "NJ",
+        "StateName": "New Jersey",
+        "ExemptTerritories": ["NJ", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "NM",
+        "StateName": "New Mexico",
+        "ExemptTerritories": ["NM", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "NV",
+        "StateName": "Nevada",
+        "ExemptTerritories": ["NV", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "NY",
+        "StateName": "New York",
+        "ExemptTerritories": ["NY", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "OH",
+        "StateName": "Ohio",
+        "ExemptTerritories": ["OH", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "OK",
+        "StateName": "Oklahoma",
+        "ExemptTerritories": []
+    },
+    {
+        "StateCode": "OR",
+        "StateName": "Oregon",
+        "ExemptTerritories": ["OR", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "PA",
+        "StateName": "Pennsylvania",
+        "ExemptTerritories": ["PA", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "RI",
+        "StateName": "Rhode Island",
+        "ExemptTerritories": ["RI", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "SC",
+        "StateName": "South Carolina",
+        "ExemptTerritories": ["SC", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "SD",
+        "StateName": "South Dakota",
+        "ExemptTerritories": ["SD", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "TN",
+        "StateName": "Tennessee",
+        "ExemptTerritories": ["TN", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "TX",
+        "StateName": "Texas",
+        "ExemptTerritories": ["TX", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "UT",
+        "StateName": "Utah",
+        "ExemptTerritories": []
+    },
+    {
+        "StateCode": "VA",
+        "StateName": "Virginia",
+        "ExemptTerritories": ["VA", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "VT",
+        "StateName": "Vermont",
+        "ExemptTerritories": ["VT", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "WA",
+        "StateName": "Washington",
+        "ExemptTerritories": ["WA", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "WI",
+        "StateName": "Wisconsin",
+        "ExemptTerritories": []
+    },
+    {
+        "StateCode": "WV",
+        "StateName": "West Virginia",
+        "ExemptTerritories": ["WV", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "WY",
+        "StateName": "Wyoming",
+        "ExemptTerritories": ["WY", "GU", "MP", "PR", "AS", "VI"]
+    },
+    {
+        "StateCode": "AS",
+        "StateName": "American Samoa",
+        "ExemptTerritories": ["AS", "GU", "MP", "PR", "VI"]
+    },
+    {
+        "StateCode": "GU",
+        "StateName": "Guam",
+        "ExemptTerritories": ["GU", "AS", "MP", "PR", "VI"]
+    },
+    {
+        "StateCode": "MP",
+        "StateName": "Northern Mariana Islands",
+        "ExemptTerritories": ["MP", "GU", "AS", "PR", "VI"]
+    },
+    {
+        "StateCode": "PR",
+        "StateName": "Puerto Rico",
+        "ExemptTerritories": ["PR", "GU", "MP", "AS", "VI"]
+    },
+    {
+        "StateCode": "VI",
+        "StateName": "Virgin Islands",
+        "ExemptTerritories": ["VI", "GU", "MP", "PR", "AS"]
+    }
+]
