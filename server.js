@@ -23,13 +23,70 @@ app.get('/', (req, res) => {
 })
 
 app.get('/lookup/:year/:symbol', (req, res) => {
-    res.send(searchBonds(req.params.symbol, req.params.year))
+  res.send(searchBonds(req.params.symbol, req.params.year))
+})
+
+app.get('/lookup/:territory', (req, res) => {
+  res.send(searchTerritories(req.params.territory))
 })
 
 app.post('/', (req, res) => {
-    console.log(req.body)
-    res.send(req.body.state)
+    res.send(calculateSavings(req.body.symbol, req.body.year, req.body.state, req.body.dividends))
 })
+
+app.get('/testcalc', (req, res) => {
+  res.send(calculateSavings("FMNDX", 2024, "HI", 7000))
+})
+
+function calculateSavings(bondSymb, year, stateCode, dividend) {
+  // gather the desired objects
+  const stateData = searchTerritories(stateCode)
+  const bondData  = searchBonds(bondSymb, year)
+  
+  let calcData = []
+  let totalPercentage = 0
+
+  // Iterate through the exempt territories for user's location
+  for (const exempts of stateData.ExemptTerritories) {
+    let percentage = bondData.investment_distribution[exempts]
+
+    // In case the territory doesn't exist in that data, set the percentage to 0
+    if (percentage == null) {
+      percentage = 0
+    } 
+
+    calcData.push([exempts, percentage])
+    totalPercentage += percentage
+  }
+
+  // Round percentage to nearest ten thousandths place
+  totalPercentage = Math.round(totalPercentage * 10000) / 10000
+
+  // round nontaxable dividend earnings DOWN to nearest cent
+  const nontax = Math.floor(totalPercentage * dividend * 100) / 100
+
+  // This returned object will fill the ejs template
+  return {
+    "dividend": dividend,
+    "state": stateData.StateName,
+    "year": year,
+    "bondSymb": bondSymb,
+    "nonTaxable": nontax,
+    "taxable": dividend - nontax, 
+    "totalPercent": totalPercentage,
+    "calculation": calcData
+  }
+
+}
+
+function searchTerritories(code) {
+  for (const terr of territoryData) {
+    if (terr["StateCode"] === code) {
+        return terr
+    } 
+  }
+  return { "message": "no results" }
+}
 
 function searchBonds(symb, yr) {
     for (const bond of bondData) {
