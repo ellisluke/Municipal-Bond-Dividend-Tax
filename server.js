@@ -16,27 +16,35 @@ app.set('views', './views')
 const bondData = readData("bond-data.json")
 const territoryData = readData("exempt-territories.json")
 
-// build SQL tables
 
+// Home page
 app.get('/', (req, res) => {
-    res.render("home", {})
+    res.render("home", { data: {
+      "calculation": false
+    }})
 })
 
-app.get('/lookup/:year/:symbol', (req, res) => {
-  res.send(searchBonds(req.params.symbol, req.params.year))
-})
-
-app.get('/lookup/:territory', (req, res) => {
-  res.send(searchTerritories(req.params.territory))
-})
-
+// Home page AFTER calculation
 app.post('/', (req, res) => {
-    res.send(calculateSavings(req.body.symbol, req.body.year, req.body.state, req.body.dividends))
+    res.render("home", { data: {
+      "calculation": true,
+      "nums": calculateSavings(req.body.symbol, req.body.year, req.body.state, req.body.dividends)
+    }})
 })
 
-app.get('/testcalc', (req, res) => {
-  res.send(calculateSavings("FMNDX", 2024, "HI", 7000))
-})
+// TEST ROUTES
+
+// app.get('/lookup/:year/:symbol', (req, res) => {
+//   res.send(searchBonds(req.params.symbol, req.params.year))
+// })
+
+// app.get('/lookup/:territory', (req, res) => {
+//   res.send(searchTerritories(req.params.territory))
+// })
+
+// app.get('/testcalc', (req, res) => {
+//   res.send(calculateSavings("FMNDX", 2024, "HI", 7000))
+// })
 
 function calculateSavings(bondSymb, year, stateCode, dividend) {
   // gather the desired objects
@@ -69,6 +77,7 @@ function calculateSavings(bondSymb, year, stateCode, dividend) {
   return {
     "dividend": dividend,
     "state": stateData.StateName,
+    "stateCode": stateData.StateCode,
     "year": year,
     "bondSymb": bondSymb,
     "nonTaxable": nontax,
@@ -96,7 +105,6 @@ function searchBonds(symb, yr) {
     }
     return { "message": "no results" }
 }
-
 
 function readData(filename) {
     const filePath = path.join(__dirname, 'data', `${filename}`)
