@@ -82,7 +82,7 @@
 
         <!-- Dividends Input -->
         <label for="dividends">Dividends:</label>
-        <input type="number" id="dividends" name="dividends">
+        <input type="number" id="dividends" name="dividends" min="0" step=".01">
         <br><br>
 
         <button type="submit">Submit</button>
@@ -92,15 +92,16 @@
         <% if (data.calculation) { %>
             <table>
                 <tr>
-                    <th>Dividends</th>
                     <% data.nums.calculation.forEach(item => { %>
                         <th><%= item[0] %></th> 
                     <% }) %>
+                    <th>Dividends</th>
+                    <th><%= data.nums.stateCode %> Non-taxable</th>
+                    <th><%= data.nums.stateCode %> Taxable</th>
                 </tr>
                 <tr>
-                    <td><%= data.nums.dividend %> *</td>
                     <% for (let i = 0; i < data.nums.calculation.length; i++) { 
-                        var perc = data.nums.calculation[i][1] * 100%>
+                        var perc = data.nums.calculation[i][1] * 100 %>
                             
                         <td>
                             <% if (i == 0) { %>
@@ -114,6 +115,9 @@
                             <% } %>
                         </td> 
                     <% } %>
+                    <td>* <%= data.nums.dividend %> =</td>
+                    <td><%= data.nums.nonTaxable %></td>
+                    <td><%= data.nums.taxable %></td>
                 </tr>
             </table>
         <% } %>
