@@ -77,6 +77,7 @@ function calculateSavings(bondSymb, year, stateCode, dividend) {
   return {
     "dividend": dividend,
     "state": stateData.StateName,
+    "stateCode": stateData.StateCode,
     "year": year,
     "bondSymb": bondSymb,
     "nonTaxable": nontax,
