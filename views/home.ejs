@@ -87,5 +87,36 @@
 
         <button type="submit">Submit</button>
     </form>
+
+    <div>
+        <% if (data.calculation) { %>
+            <table>
+                <tr>
+                    <th>Dividends</th>
+                    <% data.nums.calculation.forEach(item => { %>
+                        <th><%= item[0] %></th> 
+                    <% }) %>
+                </tr>
+                <tr>
+                    <td><%= data.nums.dividend %> *</td>
+                    <% for (let i = 0; i < data.nums.calculation.length; i++) { 
+                        var perc = data.nums.calculation[i][1] * 100%>
+                            
+                        <td>
+                            <% if (i == 0) { %>
+                                (
+                            <% } %>
+                            <%= perc.toFixed(2) %>%
+                            <% if (i == data.nums.calculation.length - 1) { %>
+                                )
+                            <% } else { %>
+                                +
+                            <% } %>
+                        </td> 
+                    <% } %>
+                </tr>
+            </table>
+        <% } %>
+    </div>
 </body>
 </html>
