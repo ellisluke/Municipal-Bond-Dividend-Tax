@@ -16,16 +16,20 @@ app.set('views', './views')
 const bondData = readData("bond-data.json")
 const territoryData = readData("exempt-territories.json")
 
-// build SQL tables
 
+// Home page
 app.get('/', (req, res) => {
-    res.render("home", {})
+    res.render("home", { data: {
+      "calculation": false
+    }})
 })
 
-
-
+// Home page AFTER calculation
 app.post('/', (req, res) => {
-    res.send(calculateSavings(req.body.symbol, req.body.year, req.body.state, req.body.dividends))
+    res.render("home", { data: {
+      "calculation": true,
+      "nums": calculateSavings(req.body.symbol, req.body.year, req.body.state, req.body.dividends)
+    }})
 })
 
 // TEST ROUTES
