@@ -1,17 +1,16 @@
 require('dotenv').config()
 const express = require('express')
-const pool = require('./db')
 const fs = require('fs')
 const path = require('path')
 
-const port = process.env.PORT
+// const port = process.env.PORT
 
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
 app.use(express.static(__dirname + '/public'))
 app.set('view engine', 'ejs')
-app.set('views', './views')
+app.set('views', './src/views')
 
 // Pull the data from json files first
 const bondData = readData("bond-data.json")
@@ -30,8 +29,6 @@ for (const bond of bondData) {
     "name": bond.name
   })
 }
-
-console.log(bondDropdown)
 
 
 // Home page
@@ -147,4 +144,4 @@ function readData(filename) {
 }
 
 
-app.listen(port, () => console.log(`Server is now running on port: ${port}`))
+app.listen(8000, () => console.log(`Server is now running on port: 8000`))
