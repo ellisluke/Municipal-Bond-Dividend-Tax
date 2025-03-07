@@ -1,6 +1,5 @@
 require('dotenv').config()
 const express = require('express')
-const pool = require('./db')
 const fs = require('fs')
 const path = require('path')
 
