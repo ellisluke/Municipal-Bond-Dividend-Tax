@@ -90,9 +90,9 @@
         <br>
         <button type="submit">Calculate</button>
     </form>
-
+    <% if (data.calculation) { %>
     <div id="results">
-        <% if (data.calculation) { %>
+        
             <table id="calculation-table">
                 <tr>
                     <% data.nums.calculation.forEach(item => { %>
@@ -125,11 +125,47 @@
                     <th><%= data.nums.stateCode %> Taxable</th>
                 </tr>
                 <tr>
-                    <td><%= data.nums.nonTaxable %></td>
-                    <td><%= data.nums.taxable %></td>
+                    <td id="nonTaxCell"><%= data.nums.nonTaxable.toFixed(2) %></td>
+                    <td id="taxCell"><%= data.nums.taxable.toFixed(2) %></td>
                 </tr>
             </table>
-        <% } %>
+        
     </div>
+    <p id="copy-status"></p>
+    <% } %>
+    <script>
+        const copyStatus = document.getElementById('copy-status')
+        const defaultMsg = "Click cell to copy"
+        copyStatus.innerText = defaultMsg
+
+        const nonTaxCell = document.getElementById('nonTaxCell')
+        nonTaxCell.addEventListener('click', () => {
+            navigator.clipboard.writeText(nonTaxCell.textContent)
+                .then(() => {
+                    copyStatus.textContent = "Copied non-taxable!"
+                    setTimeout(() => {
+                        copyStatus.textContent = defaultMsg
+                    }, 2000)
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                })
+        })
+
+        const taxCell = document.getElementById('taxCell')
+        taxCell.addEventListener('click', () => {
+            navigator.clipboard.writeText(taxCell.textContent)
+                .then(() => {
+                    copyStatus.textContent = "Copied taxable!"
+                    setTimeout(() => {
+                        copyStatus.textContent = defaultMsg
+                    }, 2000)
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                })
+        })
+
+    </script>
 </body>
 </html>
