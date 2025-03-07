@@ -16,12 +16,19 @@ app.set('views', './views')
 // Pull the data from json files first
 const bondData = readData("bond-data.json")
 const territoryData = readData("exempt-territories.json")
+const territoryDropdown = []
+
+// Build the dropdowns and suggestions
+for (const loc of territoryData) {
+  territoryDropdown.push([loc.StateCode, loc.StateName])
+} 
 
 
 // Home page
 app.get('/', (req, res) => {
-    res.render("home", { data: {
-      "calculation": false
+    res.send({ data: {
+      "calculation": false,
+      "territories": territoryDropdown
     }})
 })
 
@@ -29,6 +36,7 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
     res.render("home", { data: {
       "calculation": true,
+      "territories": territoryDropdown,
       "nums": calculateSavings(req.body.symbol, req.body.year, req.body.state, req.body.dividends)
     }})
 })
