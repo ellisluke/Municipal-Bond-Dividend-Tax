@@ -4,3 +4,5 @@
 *.txt
 .DS_Store
 /.ssh
+.vscode
+npm_debug.log
