@@ -86,7 +86,20 @@
     <p id="copy-status"></p>
     <% } %>
 
-    // Script for copy functionality
+    <% if (data.calculation) { %>
+        <script>
+            const stateField = document.getElementById('state')
+            const yearField = document.getElementById('year')
+            const symbolField = document.getElementById('symbol')
+            const dividendField = document.getElementById('dividends')
+
+            stateField.value = "<%= data.nums.stateCode %>"
+            yearField.value = "<%= data.nums.year %>"
+            symbolField.value = "<%= data.nums.bondSymb %>"
+            dividendField.value = "<%= data.nums.dividend %>"
+        </script>
+    <% } %>
+
     <script>
         const copyStatus = document.getElementById('copy-status')
         const defaultMsg = "Click cell to copy"
