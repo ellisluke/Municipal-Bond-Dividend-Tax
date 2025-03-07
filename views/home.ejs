@@ -8,6 +8,7 @@
     <div id="info-div">
         <h1>Municipal Bond Funds Tax Exemption Calculator</h1>
         <p>This simple calculator lets you calculate your by state tax liability for Municipal Bond Funds that have various municipal bonds within it.</p>
+        <p>Pro tip: you can type on dropdown menus</p>
     </div>
     <form method="POST" action="/">
         <!-- State Code Dropdown -->
@@ -16,8 +17,6 @@
             <% data.territories.forEach(item => { %>
                 <option value="<%= item[0] %>"><%= item[1] %> - <%= item[0] %></option>
             <% }) %>
-            
-            
         </select>
         <br>
 
@@ -28,9 +27,13 @@
         </select>
         <br>
 
-        <!-- Symbol Input -->
+        <!-- Symbol Dropdown -->
         <label for="symbol">Fund Symbol (e.g. FMNDX)</label>
-        <input type="text" id="symbol" name="symbol">
+        <select id="symbol" name="symbol">
+            <% data.bonds.forEach(item => { %>
+                <option value="<%= item.symbol %>"><%= item.symbol %> - <%= item.name %></option>
+            <% }) %>
+        </select>
         <br>
 
         <!-- Dividends Input -->
@@ -82,6 +85,8 @@
     </div>
     <p id="copy-status"></p>
     <% } %>
+
+    // Script for copy functionality
     <script>
         const copyStatus = document.getElementById('copy-status')
         const defaultMsg = "Click cell to copy"
