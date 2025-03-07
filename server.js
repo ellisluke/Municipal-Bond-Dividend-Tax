@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
 app.use(express.static(__dirname + '/public'))
 app.set('view engine', 'ejs')
-app.set('views', './src/views')
+app.set('views', './views')
 
 // Pull the data from json files first
 const bondData = readData("bond-data.json")
@@ -33,6 +33,7 @@ for (const bond of bondData) {
 
 // Home page
 app.get('/', (req, res) => {
+    console.log("request received!!")
     res.render("home", { data: {
       "calculation": false,
       "territories": territoryDropdown,
@@ -144,4 +145,4 @@ function readData(filename) {
 }
 
 
-app.listen(3000, () => console.log(`Server is now running on port: 8000`))
+app.listen(3000, () => console.log(`Server is now running on port: 3000`))
